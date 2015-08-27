@@ -1,0 +1,156 @@
+﻿.done(function (extraProperties) {
+
+                    var contentGrid = document.getElementById("contentGrid");
+                    WinJS.Binding.processAll(contentGrid, photoObject);
+
+                    // Add picked file to MostRecentlyUsedList.
+                    WinJS.Application.sessionState.mruToken =
+                        Windows.Storage.AccessCache.StorageApplicationPermissions
+                            .mostRecentlyUsedList.add(file);
+
+                    /*
+                    var propValue = extraProperties[dateAccessedProperty];
+                    if (propValue !== null) {
+                    //    outputDiv.innerHTML += "Date accessed: " + propValue + "<br />";
+                    }
+                    propValue = extraProperties[fileOwnerProperty];
+                    if (propValue !== null) {
+                      //  outputDiv.innerHTML += "File owner: " + propValue;
+                    }
+                    */
+                }
+
+
+
+				    loadImage: function (files) {
+            var i = 0;
+            files.forEach(function (file) { 
+                if (file) {
+                    photoObject.displayName = file.displayName;
+                    photoObject.name = file.name;
+                    //  photoObject.path = file.path;
+
+                    // Get image properties
+                    file.properties.getImagePropertiesAsync().then(
+                        function (imageProperties) {
+                            //   outputDiv.innerHTML += "Date taken: " + imageProperties.dateTaken + "<br />";
+                            //    outputDiv.innerHTML += "Rating: " + imageProperties.rating + "<br />";
+
+                            photoObject.path = imageProperties.longitude;
+                            var imageBlob = URL.createObjectURL(file, { oneTimeOnly: true });
+                            photoObject.src = imageBlob;
+                            photos [i] = photoObject;
+                            i++;
+                            // Specify more properties to retrieve
+                            var dateAccessedProperty = "System.DateAccessed";
+                            var fileOwnerProperty = "System.FileOwner";
+
+                            //   // Get the specified properties through storageFile.properties
+                            //return file.properties.retrievePropertiesAsync([fileOwnerProperty, dateAccessedProperty]);
+                        } //end of function
+                    }// if statement
+            })// for each
+                return true;
+       )}
+
+	   /*************** Working *****/
+	   (function () {
+    "use strict";
+
+    // Use this object to store info about the loaded image.
+    var photoObject =
+    {
+        src: null,
+        displayName: null,
+        name: null,
+        path: null,
+        dateCreated: null,
+        longitude: null
+    };
+    var photoArray = new Array();
+    var index = 0;
+
+    var homePage = WinJS.UI.Pages.define("/pages/photoPicker/photoPicker.html", {
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+            // TODO: Initialize the page here.
+
+               document.getElementById("getPhotoButton")
+                   .addEventListener("click", this.getPhotoButtonClickHandler, false);
+
+            if (
+                WinJS.Application.sessionState.previousExecutionState
+                === Windows.ApplicationModel.Activation.ApplicationExecutionState.terminated) {
+                var mruToken = WinJS.Application.sessionState.mruToken;
+                if (mruToken) {
+                    Windows.Storage.AccessCache.StorageApplicationPermissions.
+                        mostRecentlyUsedList.getFileAsync(mruToken)
+                            .done(this.loadImage, this.displayError);
+                }
+
+            }
+
+        },
+
+        getPhotoButtonClickHandler: function (eventInfo) {
+
+            if (Windows.UI.ViewManagement.ApplicationView.value !=
+                Windows.UI.ViewManagement.ApplicationViewState.snapped ||
+                Windows.UI.ViewManagement.ApplicationView.tryUnsnap() === true) {
+
+                // Create the picker object and set options
+                var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+                openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
+                openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
+                // Users expect to have a filtered view of their folders depending on the scenario.
+                // For example, when choosing a documents folder, restrict the filetypes to documents for your application.
+                openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
+
+                openPicker.pickMultipleFilesAsync().then(function (files) {
+                    if (files.size > 0) {
+                        var index = 0;
+                        for (var i = 0; i < files.size; i++) {
+                            //   photoObject.displayName = files[i].displayName;
+                            //   photoObject.name = files[i].name;
+                            var imageBlob = URL.createObjectURL(files[i], { oneTimeOnly: true });
+
+                            photoArray.push({
+                                displayNam: files[i].displayName,
+                                name: files[i].name,
+                                src: imageBlob
+                            });
+
+
+                            /******** New stuff *****/
+                            // Get image properties
+                            files[i].properties.getImagePropertiesAsync().then(
+                                function (imageProperties) {
+                                    photoArray[index].longitude = imageProperties.longitude;
+                                    index++;
+                                })
+                            /************/
+
+                        }
+
+                    } else {
+                        // The picker was dismissed with no selected file
+                        WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
+                    }
+                });
+
+            }
+        },
+
+        displayError: function (error) {
+            document.getElementById("imageName").innerHTML = "Unable to load image.";
+        }
+
+    });
+})();
+
+
+
+                <button id="getPhotoButton">Get photo</button>
+
+				       itemDataSource : DataExample.itemList.dataSource -->

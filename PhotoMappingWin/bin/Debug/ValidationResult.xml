@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\results.xsl'?>
+<REPORT OVERALL_RESULT="PASS" VERSION="3.1" LATEST_VERSION="FALSE" UPDATE_DOWNLOAD_URL="http://go.microsoft.com/fwlink/?LinkID=246599&amp;amp;clcid=0x409" TOOLSET_ARCHITECTURE="X64" SecureBoot="FALSE" APP_TYPE="WindowsStore" PUBLISHER_DISPLAY_NAME="greenbizkit33" OSVERSION="6.3.9600.0" OS="Microsoft Windows 8.1" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1033" VALIDATION_TYPE="UI" ReportGenerationTime="6/12/2014 3:47:30 PM" ID="b4d2a11bc52d4484a7654ba0e84a8506">
+  <REQUIREMENTS>
+    <REQUIREMENT NUMBER="1" TITLE="Clean reversible install test" RATIONALE="A clean, reversible, installation allows users to successfully manage (deploy, and remove) applications on their system." />
+    <REQUIREMENT NUMBER="2" TITLE="Install to the correct folders test" RATIONALE="Windows provides specific locations in the file system to store programs and software components, shared application data, and application data specific to a user." />
+    <REQUIREMENT NUMBER="3" TITLE="Digitally signed file test" RATIONALE="An Authenticode digital signature allows users to be sure that the software is genuine. It also allows detection if a file has been tampered with e.g. infected by a virus." />
+    <REQUIREMENT NUMBER="4" TITLE="Support x64 Windows test" RATIONALE="To maintain compatibility with 64-bit versions of Windows, it is necessary that applications should natively support 64-bit or at minimum 32-bit Windows based applications to run seamlessly on 64-bit." />
+    <REQUIREMENT NUMBER="5" TITLE="OS version checking test" RATIONALE="Applications must not perform version checks for equality (== 5.1). If you need a specific feature, check whether the feature is available. If you need Windows XP, check for Windows XP or later (&gt;= 5.1), This way, your detection code will continue to work on future versions of Windows. Driver installers and uninstall modules should never check the OS version." />
+    <REQUIREMENT NUMBER="6" TITLE="User account control (UAC) test" RATIONALE="Most applications do not require administrator privileges at run time, and should be just fine running as a standard-user. Windows applications must have a manifest (embedded or external) to define its execution level that tells OS the privileges needed to run the application." />
+    <REQUIREMENT NUMBER="7" TITLE="Adhere to system restart manager messages" RATIONALE="In a critical shutdown, applications that return FALSE to WM_QUERYENDSESSION will be sent WM_ENDSESSION and closed, while those that time out in response to WM_QUERYENDSESSION will be terminated." />
+    <REQUIREMENT NUMBER="8" TITLE="Safe mode test" RATIONALE="By default, most drivers and services that did not come preinstalled with Windows are not started in Safe Mode. They should remain disabled unless they are needed for basic operations of the system or for diagnostic and recovery purposes." />
+    <REQUIREMENT NUMBER="9" TITLE="Multiuser session test" RATIONALE="Windows users should be able to run concurrent sessions without conflict or disruption.  Applications must ensure that when running in multiple sessions either locally or remotely, the normal functionality of the application should not be impacted. Application settings and data files should not be persisted across users. A user’s privacy and preferences should be isolated to the user’s session." />
+    <REQUIREMENT NUMBER="10" TITLE="Crashes and hangs test" RATIONALE="Application failures such as crashes and hangs are a major disruption to users and cause frustration. Eliminating such failures improves application stability and reliability, and overall, provides users with a better application experience.">
+      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:08s.88ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="11" TITLE="Compatibility and resiliency test" RATIONALE="When Windows detects that an application has operated in an incompatible manner, it applies a compatibility fix that causes the application to behave correctly, ensuring a positive user experience. Applications should not rely on this behavior since it is only provided to allow legacy applications to work correctly on Windows." />
+    <REQUIREMENT NUMBER="12" TITLE="App manifest compliance test" RATIONALE="The package manifest was missing one or more required attributes.">
+      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:05s.35ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="13" TITLE="Windows security best practices test" RATIONALE="An application should not change the default Windows security settings." />
+    <REQUIREMENT NUMBER="14" TITLE="Windows security features test" RATIONALE="Applications must opt-into Windows security features.">
+      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:03s.37ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="70" NAME="Banned file analyzer" DESCRIPTION="Analysis of application to detect known insecure files" EXECUTIONTIME="00h:00m:02s.77ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="62" NAME="Private code signing" DESCRIPTION="App should not package private code signing key files." EXECUTIONTIME="00h:00m:05s.04ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="15" TITLE="Supported API test" RATIONALE="The application should only refer to the APIs allowed by the Windows SDK for Windows Store Apps.">
+      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:04s.74ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="17" TITLE="Performance test" RATIONALE="The application should have a fast and responsive launch and suspend experience while consuming a reasonable amount of system resources (CPU, File IO, Memory etc.) to enable fast switching and multitasking between previously unopened applications.">
+      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:04s.02ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="60" NAME="Optimized binding references" DESCRIPTION="When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true to optimize the memory usage." EXECUTIONTIME="00h:00m:07s.81ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="43" NAME="Performance launch" DESCRIPTION="Application should have a responsive launch time with reasonable CPU, File IO and Memory usage" EXECUTIONTIME="00h:04m:19s.64ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="44" NAME="Performance suspend" DESCRIPTION="Application should have a responsive suspend with reasonable CPU and File IO usage" EXECUTIONTIME="00h:03m:47s.87ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="19" TITLE="App manifest resources test" RATIONALE="The App Package Manifest should have valid resources defined in the resources.pri file, as per the App Packaging Specification and App Manifest Schema.">
+      <TEST INDEX="45" NAME="App resources validation" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:00s.92ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="61" NAME="Branding validation" DESCRIPTION="App should not use the default images packed by windows SDK samples or Visual Studio." EXECUTIONTIME="00h:00m:07s.79ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="20" TITLE="Debug configuration test" RATIONALE="The App should not install any debug binaries.">
+      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:04s.52ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="21" TITLE="File encoding test" RATIONALE="Packages containing an HTML5 Windows Store app must have correct file encoding.">
+      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:04s.69ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="22" TITLE="Direct3D Feature Test" RATIONALE="App should use the Direct3D capability correctly.">
+      <TEST INDEX="51" NAME="Direct3D feature level support" DESCRIPTION="Applications must render content on Direct3D feature level 9.1 hardware." EXECUTIONTIME="00h:00m:06s.83ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="71" NAME="Direct3D Trim after Suspend" DESCRIPTION="Applications must call IDXGIDevice3::Trim() on the Direct3D devices they create when handling a Suspend notification." EXECUTIONTIME="00h:00m:02s.60ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="23" TITLE="App Capabilities test" RATIONALE="Packages declaring special-use capabilities will have to provide justifications during the onboarding process.">
+      <TEST INDEX="52" NAME="Special use capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:03s.62ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="24" TITLE="Windows Runtime metadata validation" RATIONALE="Metadata needs to be conformant and consistent across all generation sources.">
+      <TEST INDEX="56" NAME="ExclusiveTo attribute test" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:04s.54ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="57" NAME="Type location test" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:02s.48ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="55" NAME="Type name case-sensitivity test" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:02s.60ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="54" NAME="Type name correctness test" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:02s.30ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="58" NAME="General metadata correctness test" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:04s.44ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="53" NAME="Properties test" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:02s.23ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="25" TITLE="Package sanity test" RATIONALE="Validation of the app package contents to ensure correctness.">
+      <TEST INDEX="63" NAME="Platform appropriate files" DESCRIPTION="App should not install files that do not match the target processor architecture." EXECUTIONTIME="00h:00m:07s.85ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="66" NAME="Supported directory structure check" DESCRIPTION="Validate each file in the package for that the file name length should be less than MAX_PATH." EXECUTIONTIME="00h:00m:02s.38ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="26" TITLE="High-DPI support" RATIONALE="The application needs to set DPI-aware to make the UI look consistently good across a wide variety of high-DPI display settings." />
+    <REQUIREMENT NUMBER="27" TITLE="Resource Usage Test" RATIONALE="WinJS background tasks need to call close() to free resource.">
+      <TEST INDEX="68" NAME="WinJS background task test" DESCRIPTION="WinJS background tasks need to call close() to free resource." EXECUTIONTIME="00h:00m:06s.18ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+  </REQUIREMENTS>
+  <APPLICATIONS>
+    <Installed_Programs>
+      <Program Name="44277greenbizkit33.GeoTaggedPhotoMapping" Type="Application" Source="AppxPackage" Publisher="CN=8F6A0F10-E6BD-4DB0-8B3F-1272D1F47666" Version="1.1.0.5" Language="1033" OnSystemDrive="true" RootDirPath="C:\Program Files\WindowsApps\44277greenbizkit33.GeoTaggedPhotoMapping_1.1.0.5_neutral__k8045abx49tet" PathEvidenceId="0xa" RNP="0x1" DNP="0xd" EvidenceId="0xa" Id="0000756279d7366caa13b279f2d04b7d375500000904">
+        <Indicators>
+          <DirectoryIndicators>
+            <Directory Name="directions" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\directions" RNP="0x9" DNP="0xb" UniqueId="0x2a" Id="0000c261481a6298d9a8b1a38db0f646252d90c22d5e" />
+            <Directory Name="photopicker" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\photopicker" RNP="0x9" DNP="0xb" UniqueId="0x33" Id="000082429203a8c4fab39682b30fe178e5fab0377529" />
+            <Directory Name="44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet" RNP="0x9" DNP="0xb" UniqueId="0xb" Id="00007f858373412de2c5826d8c6c9a1876f15dfbe395" />
+            <Directory Name="home" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\home" RNP="0x9" DNP="0xb" UniqueId="0x2d" Id="00007eb0baafbaaf8336d49e7c3224114d4f05b6a749" />
+            <Directory Name="bing.maps.javascript" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript" RNP="0x9" DNP="0xb" UniqueId="0xe" Id="00006a1a97684a506bf977ba006a3130c26493df5df7" />
+            <Directory Name="js" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\js" RNP="0x9" DNP="0xb" UniqueId="0x24" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
+            <Directory Name="pages" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages" RNP="0x9" DNP="0xb" UniqueId="0x29" Id="000019ff601290dc13568ff4c70ea07fd47a73f13ab3" />
+            <Directory Name="js" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript\js" RNP="0x9" DNP="0xb" UniqueId="0x1f" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
+            <Directory Name="options" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\options" RNP="0x9" DNP="0xb" UniqueId="0x30" Id="00003e3d6ae5470410c984fb7679cb2176a45d22926b" />
+          </DirectoryIndicators>
+          <WindowsStoreAppManifestIndicators>
+            <PackageManifest PackageFullName="44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet">
+              <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+                <Identity Name="44277greenbizkit33.GeoTaggedPhotoMapping" Version="1.1.0.5" Publisher="CN=8F6A0F10-E6BD-4DB0-8B3F-1272D1F47666" ProcessorArchitecture="neutral" />
+                <Properties>
+                  <DisplayName>GeoTagged Photo Mapping</DisplayName>
+                  <PublisherDisplayName>greenbizkit33</PublisherDisplayName>
+                  <Logo>images\photoIcon50.png</Logo>
+                </Properties>
+                <Prerequisites>
+                  <OSMinVersion>6.3.0</OSMinVersion>
+                  <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+                </Prerequisites>
+                <Resources>
+                  <Resource Language="EN-US" />
+                </Resources>
+                <Applications>
+                  <Application Id="App" StartPage="default.html">
+                    <m2:VisualElements DisplayName="Photo Mapping" Description="Map your meta tag photos onto a Bing Map. Use the options page to connect the photo chronologically and create an average marker.  Click on the push pin to see photo details" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\photoIcon150.png" Square30x30Logo="images\photoIcon30.png" ToastCapable="false">
+                      <m2:DefaultTile>
+                        <m2:ShowNameOnTiles>
+                          <m2:ShowOn Tile="square150x150Logo" />
+                        </m2:ShowNameOnTiles>
+                      </m2:DefaultTile>
+                      <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="#3294d8" />
+                      <m2:InitialRotationPreference>
+                        <m2:Rotation Preference="landscape" />
+                        <m2:Rotation Preference="landscapeFlipped" />
+                      </m2:InitialRotationPreference>
+                    </m2:VisualElements>
+                  </Application>
+                </Applications>
+                <Capabilities>
+                  <Capability Name="internetClient" />
+                </Capabilities>
+                <Dependencies>
+                  <PackageDependency Name="Microsoft.WinJS.2.0" MinVersion="1.0.9600.16408" />
+                </Dependencies>
+              </Package>
+            </PackageManifest>
+          </WindowsStoreAppManifestIndicators>
+        </Indicators>
+        <StaticProperties>
+          <Files Id="0000fa3a48dd8df1c0e4f22e0bd80afbc052200eac53">
+            <File Name="navigator.js" Id="0000e8bd405855b499efc5e7854617d320dc0173ff80" ShortName="NAVIGA~1.JS" Size="0x1530" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\js\navigator.js" LongPathHash="0000e9038bf5606ba6b86ef07e3b572b9c256ad42d20" UniqueId="0x26" />
+            <File Name="options.html" Id="0000214c8bf06141ba5a7752ab4343ee0ea72fc1a9da" ShortName="OPTION~1.HTM" Size="0x49e" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\options" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\options\options.html" LongPathHash="00008e3c61bf43b632962f65fb143cc77fa3673f6026" UniqueId="0x31" />
+            <File Name="veapiModules.js" Id="000092076f6cd9a3776b6d72824faa6bff03227efb46" ShortName="VEAPIM~1.JS" Size="0x44be8" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript\js\veapimodules.js" LongPathHash="00003ea2e42fbef970792759721b9fc10415aca6ec7e" UniqueId="0x21" />
+            <File Name="direction.html" Id="0000738657705c0a568989e9e63b7a5b6216afcf08d3" ShortName="DIRECT~1.HTM" Size="0x4a3" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\directions" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\directions\direction.html" LongPathHash="0000a2c1cc0accdd4b815fe119e524aaece1ec15aa80" UniqueId="0x2b" />
+            <File Name="direction.js" Id="000008ca36454c2147d358dc5ddcc7672344ca8594c3" ShortName="DIRECT~1.JS" Size="0xb02" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\directions" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\directions\direction.js" LongPathHash="00000d2f54e0671b0779be9dacb6fe57a96ffe9303be" UniqueId="0x2c" />
+            <File Name="resources.pri" Id="0000ce0535345733b3f7a0333fdefd29ec38e4c34a84" ShortName="RESOUR~1.PRI" Size="0x6a338" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\resources.pri" LongPathHash="0000e81b5835ea845d5e2717e60c04b1853c16dc9b84" UniqueId="0xd" />
+            <File Name="default.js" Id="00001a3fe6bdbdc4324e72771f1799d5f8ee649f08f5" Size="0x1ecc" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\js\default.js" LongPathHash="00007e8b1ff3ebae2462672f10263dbc9104286f2838" UniqueId="0x25" />
+            <File Name="veapicore.js" Id="000044da0b9ae30fd215951e32f2fa0e207c3ea7d3a5" ShortName="VEAPIC~1.JS" Size="0x4a765" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\bing.maps.javascript\js\veapicore.js" LongPathHash="00008f09b83b8a4d8e28edae58992657c17c2df817a4" UniqueId="0x20" />
+            <File Name="home.html" Id="0000159aa80e0ac355c324bf55ddbbb307328f46443f" ShortName="HOME~1.HTM" Size="0xd06" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\home\home.html" LongPathHash="00004e46fa5fa1152edccdb9534e8bcbeee511034847" UniqueId="0x2e" />
+            <File Name="default.html" Id="000006cce40624119aa6114e14ee34590db713aab713" ShortName="DEFAUL~1.HTM" Size="0x43a" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\default.html" LongPathHash="000089706b1dddb5c9829f437278b4f8b59be36d5bfd" UniqueId="0xc" />
+            <File Name="home.js" Id="0000bb724a477a3fb4d92af9cb0c067b7a33001a8f20" Size="0x2139" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\home\home.js" LongPathHash="00009f0a77d686c664f1ff671797e5ae674dbb649020" UniqueId="0x2f" />
+            <File Name="options.js" Id="00005d8a2ab4c7c7a875994e9cbc5090738c46b3c58a" Size="0x764" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\options" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\options\options.js" LongPathHash="000004cff698e74acd94f027e893535923053c1301ef" UniqueId="0x32" />
+            <File Name="photoPicker.js" Id="000086e3c42c171785618bacf6c718d65a8a263ed5d6" ShortName="PHOTOP~1.JS" Size="0x1509" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\photopicker" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\photopicker\photopicker.js" LongPathHash="00007b5e08b8a63dc605066266947cbb675718707139" UniqueId="0x35" />
+            <File Name="photoPicker.html" Id="00009ad379ebfd0f567bb43cc0b8b04856fa56d5e14f" ShortName="PHOTOP~1.HTM" Size="0xa64" BinaryType="UNKNOWN" Created="06/12/2014 19:38:28" Modified="06/12/2014 19:38:28" Path="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\photopicker" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\44277greenbizkit33.geotaggedphotomapping_1.1.0.5_neutral__k8045abx49tet\pages\photopicker\photopicker.html" LongPathHash="0000e7617f62072b952aa3aa1ec2c520969de3f8623c" UniqueId="0x34" />
+          </Files>
+        </StaticProperties>
+      </Program>
+    </Installed_Programs>
+  </APPLICATIONS>
+  <DEPENDENCY_INFORMATION>
+    <AitStaticAnalysis ProgramId="0000756279d7366caa13b279f2d04b7d375500000904" AnalysisVersion="1.60" DictionaryVersion="2.14" Type="Package" Id="44277greenbizkit33.GeoTaggedPhotoMapping_1.1.0.5_neutral__k8045abx49tet">
+      <AitFile ErrorCode="0" Name="default.html" Id="000006cce40624119aa6114e14ee34590db713aab713">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.UI.AppBar" />
+          <AitFeature Name="WinJS.UI.AppBarCommand" />
+          <AitFeature Name="navigator.js" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="direction.js" Id="000008ca36454c2147d358dc5ddcc7672344ca8594c3">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="document.getElementById" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="home.html" Id="0000159aa80e0ac355c324bf55ddbbb307328f46443f">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.UI.AppBarIcon.gotostart" />
+          <AitFeature Name="WinJS.UI.AppBarIcon.settings" />
+          <AitFeature Name="WinJS.UI.NavBar" />
+          <AitFeature Name="WinJS.UI.NavBarCommand" />
+          <AitFeature Name="WinJS.UI.NavBarContainer" />
+          <AitFeature Name="location" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="default.js" Id="00001a3fe6bdbdc4324e72771f1799d5f8ee649f08f5">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="URL.createObjectURL" />
+          <AitFeature Name="WinJS.Application" />
+          <AitFeature Name="WinJS.Application.sessionState.mruToken" />
+          <AitFeature Name="WinJS.Application.sessionState.previousExecutionState" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.UI.Pages.render" />
+          <AitFeature Name="WinJS.UI.processAll" />
+          <AitFeature Name="WinJS.Utilities.empty" />
+          <AitFeature Name="WinJS.Utilities.setInnerHTML" />
+          <AitFeature Name="WinJS.log" />
+          <AitFeature Name="WinJS.xhr" />
+          <AitFeature Name="Windows.ApplicationModel.Activation" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.clear" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.entries" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.getFileAsync" />
+          <AitFeature Name="document.body.querySelector" />
+          <AitFeature Name="document.getElementById" />
+          <AitFeature Name="location" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="options.html" Id="0000214c8bf06141ba5a7752ab4343ee0ea72fc1a9da">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.UI.BackButton" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="32" Name="JSByteCodeCache_64" Id="00003000000000000000000000000000000000000000" />
+      <AitFile ErrorCode="0" Name="veapicore.js" Id="000044da0b9ae30fd215951e32f2fa0e207c3ea7d3a5">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="Windows.ApplicationModel" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.Core" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.Core.ResourceManager.current.defaultContext.languages" />
+          <AitFeature Name="Windows.System.UserProfile.GlobalizationPreferences.homeGeographicRegion" />
+          <AitFeature Name="document" />
+          <AitFeature Name="document.addEventListener" />
+          <AitFeature Name="document.attachEvent" />
+          <AitFeature Name="document.body" />
+          <AitFeature Name="document.body.appendChild" />
+          <AitFeature Name="document.body.removeChild" />
+          <AitFeature Name="document.body.scrollLeft" />
+          <AitFeature Name="document.body.scrollTop" />
+          <AitFeature Name="document.compatMode" />
+          <AitFeature Name="document.createElement" />
+          <AitFeature Name="document.createElementNS" />
+          <AitFeature Name="document.createEvent" />
+          <AitFeature Name="document.createTextNode" />
+          <AitFeature Name="document.defaultView" />
+          <AitFeature Name="document.defaultView.getComputedStyle" />
+          <AitFeature Name="document.documentElement" />
+          <AitFeature Name="document.documentElement.className" />
+          <AitFeature Name="document.documentElement.clientHeight" />
+          <AitFeature Name="document.documentElement.clientWidth" />
+          <AitFeature Name="document.documentElement.scrollLeft" />
+          <AitFeature Name="document.documentElement.scrollTop" />
+          <AitFeature Name="document.documentMode" />
+          <AitFeature Name="document.focus" />
+          <AitFeature Name="document.getElementsByTagName" />
+          <AitFeature Name="document.implementation" />
+          <AitFeature Name="document.implementation.hasFeature" />
+          <AitFeature Name="document.namespaces" />
+          <AitFeature Name="document.namespaces.add" />
+          <AitFeature Name="document.removeEventListener" />
+          <AitFeature Name="location" />
+          <AitFeature Name="navigator" />
+          <AitFeature Name="navigator.geolocation" />
+          <AitFeature Name="navigator.geolocation.getCurrentPosition" />
+          <AitFeature Name="navigator.msPointerEnabled" />
+          <AitFeature Name="navigator.pointerEnabled" />
+          <AitFeature Name="navigator.userAgent" />
+          <AitFeature Name="navigator.userAgent.toLowerCase" />
+          <AitFeature Name="navigator.vendor" />
+          <AitFeature Name="window" />
+          <AitFeature Name="window." />
+          <AitFeature Name="window.Windows" />
+          <AitFeature Name="window.clearInterval" />
+          <AitFeature Name="window.clearTimeout" />
+          <AitFeature Name="window.console" />
+          <AitFeature Name="window.event" />
+          <AitFeature Name="window.focus" />
+          <AitFeature Name="window.g" />
+          <AitFeature Name="window.innerHeight" />
+          <AitFeature Name="window.innerWidth" />
+          <AitFeature Name="window.microsoftMapsNetworkCallback" />
+          <AitFeature Name="window.open" />
+          <AitFeature Name="window.opera" />
+          <AitFeature Name="window.pageXOffset" />
+          <AitFeature Name="window.pageYOffset" />
+          <AitFeature Name="window.self" />
+          <AitFeature Name="window.setInterval" />
+          <AitFeature Name="window.setTimeout" />
+          <AitFeature Name="window.top" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="options.js" Id="00005d8a2ab4c7c7a875994e9cbc5090738c46b3c58a">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="document.getElementById" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="direction.html" Id="0000738657705c0a568989e9e63b7a5b6216afcf08d3">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.UI.BackButton" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="photoPicker.js" Id="000086e3c42c171785618bacf6c718d65a8a263ed5d6">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Binding.List" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="Windows" />
+          <AitFeature Name="Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.clear" />
+          <AitFeature Name="Windows.Storage.Pickers.FileOpenPicker" />
+          <AitFeature Name="Windows.Storage.Pickers.PickerLocationId.picturesLibrary" />
+          <AitFeature Name="Windows.Storage.Pickers.PickerViewMode.thumbnail" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
+          <AitFeature Name="Windows.UI.Popups.UICommand" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.tryUnsnap" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView.value" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState.snapped" />
+          <AitFeature Name="document.getElementById" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="veapiModules.js" Id="000092076f6cd9a3776b6d72824faa6bff03227efb46">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="MSApp.execUnsafeLocalFunction" />
+          <AitFeature Name="Windows.ApplicationModel.Resources.Core.ResourceManager.current.defaultContext.languages" />
+          <AitFeature Name="document" />
+          <AitFeature Name="document.body" />
+          <AitFeature Name="document.body.appendChild" />
+          <AitFeature Name="document.body.removeChild" />
+          <AitFeature Name="document.createElement" />
+          <AitFeature Name="document.createTextNode" />
+          <AitFeature Name="document.documentElement" />
+          <AitFeature Name="document.getElementById" />
+          <AitFeature Name="location" />
+          <AitFeature Name="window" />
+          <AitFeature Name="window." />
+          <AitFeature Name="window.ActiveXObject" />
+          <AitFeature Name="window.Sys" />
+          <AitFeature Name="window.Sys.UI" />
+          <AitFeature Name="window.Sys.UI.Behavior" />
+          <AitFeature Name="window.clearInterval" />
+          <AitFeature Name="window.clearTimeout" />
+          <AitFeature Name="window.document" />
+          <AitFeature Name="window.location.search" />
+          <AitFeature Name="window.location.search.substr" />
+          <AitFeature Name="window.open" />
+          <AitFeature Name="window.self" />
+          <AitFeature Name="window.setInterval" />
+          <AitFeature Name="window.setTimeout" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="photoPicker.html" Id="00009ad379ebfd0f567bb43cc0b8b04856fa56d5e14f">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.Binding.Template" />
+          <AitFeature Name="WinJS.UI.AppBarIcon.home" />
+          <AitFeature Name="WinJS.UI.AppBarIcon.settings" />
+          <AitFeature Name="WinJS.UI.BackButton" />
+          <AitFeature Name="WinJS.UI.ListView" />
+          <AitFeature Name="WinJS.UI.NavBar" />
+          <AitFeature Name="WinJS.UI.NavBarCommand" />
+          <AitFeature Name="WinJS.UI.NavBarContainer" />
+          <AitFeature Name="WinJS.UI.ViewBox" />
+          <AitFeature Name="location" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="home.js" Id="0000bb724a477a3fb4d92af9cb0c067b7a33001a8f20">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Application.sessionState.mruToken" />
+          <AitFeature Name="WinJS.Application.sessionState.previousExecutionState" />
+          <AitFeature Name="WinJS.Binding.processAll" />
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="Windows.ApplicationModel.Activation.ApplicationExecutionState.terminated" />
+          <AitFeature Name="Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
+          <AitFeature Name="Windows.UI.Popups.UICommand" />
+          <AitFeature Name="document.getElementById" />
+          <AitFeature Name="location" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="navigator.js" Id="0000e8bd405855b499efc5e7854617d320dc0173ff80">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Class.define" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.Promise.as" />
+          <AitFeature Name="WinJS.UI.Animation.enterPage" />
+          <AitFeature Name="WinJS.UI.Pages.render" />
+          <AitFeature Name="WinJS.Utilities.disposeSubTree" />
+          <AitFeature Name="document.createElement" />
+          <AitFeature Name="navigator" />
+          <AitFeature Name="window.getComputedStyle" />
+          <AitFeature Name="window.onresize" />
+        </AitCategory>
+      </AitFile>
+    </AitStaticAnalysis>
+  </DEPENDENCY_INFORMATION>
+</REPORT>

@@ -1,0 +1,16 @@
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Release\AppxManifest.xml
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Release\PhotoMappingWin.build.appxrecipe
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\priconfig.xml
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\priconfig.xml.intermediate
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\layout.resfiles
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\layout.resfiles.intermediate
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\resources.resfiles
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\resources.resfiles.intermediate
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\pri.resfiles
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\pri.resfiles.intermediate
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\qualifiers.txt
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\qualifiers.txt.intermediate
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Release\ProjectArchitectures.txt
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Release\MicrosoftAdvertising.winmd
+C:\Users\nathan\Documents\Visual Studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Release\resources.pri

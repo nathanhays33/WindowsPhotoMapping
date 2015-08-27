@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>options</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="options.css" rel="stylesheet" />
+    <script src="options.js"></script>
+</head>
+<body>
+    <div class="options fragment">
+        <header aria-label="Header content" role="banner">
+            <button id="backButton" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Options</span>
+            </h1>
+
+						    <div id="myAd" style="position: absolute; top: 0px; width: 728px; height: 90px; z-index: 1; right: 0px;"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'c6db9f8e-aa57-4d4c-8ede-a78dad68b6b7', adUnitId: '182515'}">
+         </div>
+        </header>
+        <section aria-label="Main content" role="main">
+            <label>
+                <input id="averageMarker" type="checkbox" class="checkbox" />Add an Average Marker
+            </label>
+         <br />
+            <label>
+        <input id="connectPins" type="checkbox" class="checkbox" />Connect the Push Pins Chronologically 
+            </label>
+            <br />
+            <input id="userPin" type="checkbox" class="checkbox">
+            <label id="locationLabel">
+                Show your location (Must be enabled in PC Setting)
+            </label>
+            <br/>
+
+            <label for="fromLocation">Your Location:</label>
+            <div id="location" class="label">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

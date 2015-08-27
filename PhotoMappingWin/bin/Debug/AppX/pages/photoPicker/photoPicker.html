@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PhotoPicker</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="/pages/photoPicker/photoPicker.css" rel="stylesheet" />
+    <script src="/pages/photoPicker/photoPicker.js"></script>
+</head>
+
+<body>
+	<div class="options fragment">
+    <div id="NavBar" data-win-control="WinJS.UI.NavBar">
+        <div id="GlobalNav" data-win-control="WinJS.UI.NavBarContainer">
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Map',
+                        icon: WinJS.UI.AppBarIcon.home,
+                        location: '/pages/home/home.html',
+                        splitButton: false
+                        }">
+            </div>
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Options',
+                        icon: WinJS.UI.AppBarIcon.settings,
+                        location: '/pages/options/options.html',
+                        splitButton: false
+                        }">
+            </div>
+
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Information',
+                        icon: WinJS.UI.AppBarIcon.emoji2,
+                        location: '/pages/information/information.html',
+                        splitButton: false
+                        }">
+            </div>
+        </div>
+    </div>
+
+   <header aria-label="Header content" role="banner">
+            <button id="backButton" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Photos</span>
+            </h1>
+    </header>
+
+	<section aria-label="Main content" role="main">
+	<div data-win-control="WinJS.UI.ViewBox" style="left: 0px; top: 0px;">
+    <div id="content">
+        <div id="basicListView"
+             data-win-control="WinJS.UI.ListView"
+             data-win-options="{
+               itemTemplate:select('.itemtemplate')
+         }">
+        </div>
+
+        <button id="getPhotoButton" class="buttons">Get Photos</button>
+        <button id="addPhotoButton" class="buttons">Add Photos</button>
+        <button id="clearPhotoButton" class="buttons">Clear Photos</button>
+       
+	   <button id="resetPhotoButton">Reset Search</button>
+       <button id="exportPhotoButton">Export Photos</button>
+	   
+            <select id="distance">
+                <option value="5">5 km</option>
+                <option value="25">25 km</option>
+                <option value="50">50 km</option>
+                <option value="100">100 km</option>
+                <option value="200">200 km</option>
+                <option value="500">500 km</option>
+                <option value="1000">1000 km</option>
+            </select>
+            <div id="searchFields" class="searchBox"
+                 data-win-control="WinJS.UI.SearchBox"
+                 data-win-options="{placeholderText: 'Search Photos by Location',
+                                   onquerysubmitted: SearchUtils.querySubmittedHandler }" style="left: 750px; margin-top: 10px; top: -45px;">
+            </div>
+	
+		</div>
+    </div>
+       <!-- Templates -->
+    <div id="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <div>
+            <div id="image">
+                <img id="displayImage" src="#" data-win-bind="src: src" />
+              <!--  <img id="displayMap" src="#" data-win-bind="src: image" /> -->
+            </div>
+            <p class="name" data-win-bind="innerText:name"></p>
+		</div>
+    </div>
+
+     <div id="itemtemplateDistance" data-win-control="WinJS.Binding.Template">
+            <div>
+                <div id="image">
+                    <img id="displayImage" src="#" data-win-bind="src: distance" />
+                    <!--  <img id="displayMap" src="#" data-win-bind="src: image" /> -->
+                </div>
+                <p class="name" data-win-bind="innerText:distance"></p>
+            </div>
+        </div>
+	</section>
+	</div>
+</body>
+
+
+</html>

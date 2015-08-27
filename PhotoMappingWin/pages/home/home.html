@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/pages/home/home.js"></script>
+
+    
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <div id="NavBar" data-win-control="WinJS.UI.NavBar">
+            <div id="GlobalNav" data-win-control="WinJS.UI.NavBarContainer">
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Select Photos',
+                        icon: WinJS.UI.AppBarIcon.gotostart,
+                        location: '/pages/photoPicker/photoPicker.html',
+                        splitButton: false
+                        }">
+                </div>
+
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Options',
+                        icon: WinJS.UI.AppBarIcon.settings,
+                        location: '/pages/options/options.html',
+                        splitButton: false
+                        }">
+                </div>
+
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Information',
+                        icon: WinJS.UI.AppBarIcon.emoji2,
+                        location: '/pages/information/information.html',
+                        splitButton: false
+                        }">
+                </div>
+
+            </div>
+        </div>
+    	<div id="container"> 
+    		<div id="mapDiv"> </div>
+    		<div id ="mapBar">
+                    <div id="contentGrid">
+        <!--              <div id="imageName" class="pageSubheader"
+                             data-win-bind="innerHTML: displayName">Image name</div> -->  
+                        <div id="imageGrid">
+                            <img id="displayImage" src="#" data-win-bind="src: src" class="label" />
+                            <div id="imageInfoContainer">
+                                <label for="fileName" class="label">File name:</label>
+                                <div id="fileName" data-win-bind="innerHTML: name" class="label">File name</div>
+                                <label for="path" class="label">Path:</label>
+                                <div id="path" data-win-bind="innerHTML: path" class="label">Path</div>
+                                <label for="dateCreated">Date created:</label>
+                                <div id="dateCreated"
+                                     data-win-bind="innerHTML: dateCreated" class="label">Date created</div>
+                                <label for="location">Location:</label>
+                                <div id="location" class="label">
+                                          </div>
+                                <label for="fromLocation">Distance from you:</label>
+                                <div id="fromLocation" class="label">
+                                 </div>
+                                 <button id="exchangeMarkerButton">Toggle Blue Marker</button>
+                            </div>
+                        </div>
+            
+                    </div>
+
+    		</div> 
+     	</div>
+	</div>
+
+
+	    <div id="myAd" style="position: absolute; bottom: 0px; width: 728px; height: 90px; z-index: 1; left: 0px;"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'c6db9f8e-aa57-4d4c-8ede-a78dad68b6b7', adUnitId: '182515'}">
+    </div>
+
+
+</body>
+</html>

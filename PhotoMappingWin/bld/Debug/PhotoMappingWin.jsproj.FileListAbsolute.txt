@@ -1,0 +1,15 @@
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Debug\ReverseMap\resources.pri
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Debug\AppxManifest.xml
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bin\Debug\PhotoMappingWin.build.appxrecipe
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\priconfig.xml
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\priconfig.xml.intermediate
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\layout.resfiles
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\layout.resfiles.intermediate
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\resources.resfiles
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\resources.resfiles.intermediate
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\pri.resfiles
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\pri.resfiles.intermediate
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\qualifiers.txt
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\qualifiers.txt.intermediate
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+c:\users\nathan\documents\visual studio 2013\Projects\PhotoMappingWin\PhotoMappingWin\bld\Debug\ProjectArchitectures.txt

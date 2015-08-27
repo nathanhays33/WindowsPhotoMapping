@@ -1,0 +1,76 @@
+﻿
+#content{
+	height: 100%;
+}
+#searchFields{
+	margin:0px;
+	padding:0px;
+}
+#getPhotoButton{
+	margin-top:10px;
+}
+
+#clearPhotoButton{
+	margin-top:10px;
+}
+
+#resetPhotoButton{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+#exportPhotoButton{
+    margin-top:10px;
+	margin-left:10px;
+}
+#distance{
+	margin-left:10px;
+}
+	
+.buttons{
+    margin-left:15px;
+}
+	
+.win-listview {
+	height:80%;
+    width: 100%;
+	margin-top:10px;
+    border: 2px solid lightgray;
+    background-color: white;
+}
+/*
+.win-item img {
+    max-width: 150px;
+    max-height: 100px;
+    min-width: 150px;
+    min-height: 100px;
+}
+*/
+.win-item h3 {
+    height: 50px;
+}
+
+
+
+#image
+{
+    position: relative;
+
+}
+
+#displayImage
+{
+        max-width: 150px;
+    max-height: 100px;
+    min-width: 150px;
+    min-height: 100px;
+}
+
+#displayMap
+{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+}

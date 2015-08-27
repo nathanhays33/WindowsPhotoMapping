@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
+  <Identity Name="44277greenbizkit33.GeoTaggedPhotoMapping" Version="1.1.0.10" Publisher="CN=8F6A0F10-E6BD-4DB0-8B3F-1272D1F47666" />
+  <Properties>
+    <DisplayName>GeoTagged Photo Mapping</DisplayName>
+    <PublisherDisplayName>greenbizkit33</PublisherDisplayName>
+    <Logo>images\photoIcon50.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <m2:VisualElements DisplayName="Photo Mapping" Description="Map your meta tag photos onto a Bing Map. Use the options page to connect the photo chronologically and create an average marker.  Click on the push pin to see photo details" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\photoIcon150.png" Square30x30Logo="images/photoIcon30.png" ToastCapable="false">
+        <m2:DefaultTile>
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="#3294d8" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+          <m2:Rotation Preference="landscapeFlipped" />
+        </m2:InitialRotationPreference>
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <build:Metadata>
+    <build:Item Name="Blend" Version="12.0.50429.0" />
+  </build:Metadata>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="picturesLibrary" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

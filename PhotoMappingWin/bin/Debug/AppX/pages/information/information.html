@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>information</title>
+
+  <link href="information.css" rel="stylesheet" /> 
+    <script src="information.js"></script>
+</head>
+<body>
+    <div class="information fragment">
+        <header class="page-header" aria-label="Header content" role="banner">
+            <div id="NavBar" data-win-control="WinJS.UI.NavBar">
+                <div id="GlobalNav" data-win-control="WinJS.UI.NavBarContainer">
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Map',
+                        icon: WinJS.UI.AppBarIcon.home,
+                        location: '/pages/home/home.html',
+                        splitButton: false
+                        }">
+                    </div>
+
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Select Photos',
+                        icon: WinJS.UI.AppBarIcon.gotostart,
+                        location: '/pages/photoPicker/photoPicker.html',
+                        splitButton: false
+                        }">
+                    </div>
+
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Options',
+                        icon: WinJS.UI.AppBarIcon.settings,
+                        location: '/pages/options/options.html',
+                        splitButton: false
+                        }">
+                    </div>
+
+                </div>
+            </div>
+            <button class="back-button" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Information</span>
+            </h1>
+        </header>
+            
+     <section class="page-section" aria-label="Main content" role="main">
+         <div id="containerBox">
+             <h2>Status</h2>
+             <label>Your Location (Only Full Version):</label>
+             <div id="location"></div>
+             <br>
+             <label>Type:</label>
+             <div id="type"></div>
+             <br>
+             <label>Number of Photos Loaded:</label>
+             <div id="photoCount"></div>
+             <br>
+             <label>Number of Photos GeoTagged:</label>
+             <div id="geoTagCount"></div>
+             <br>
+
+             <h2>Contact Me (Bugs or Suggestions)</h2>
+             <p>nathan.hays33@gmail.com</p>
+             <a href="http://www.nathanhaze.com/">Site (opens in browser)</a>
+             <br>
+             <br>
+             <h2>How To</h2>
+             <label>Open photo in another app or Share:</label>
+             <p>First click a map marker in the map or select a photo in the loaded photos.</p>
+             <p>After photo is selected press the Window button + h  or on touch devices swipe in from right edge of the screen, and then tap Share.</p>
+         </div>
+</section>
+    </div>
+</body>
+</html>

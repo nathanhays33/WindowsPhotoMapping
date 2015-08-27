@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PhotoPicker</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="/pages/photoPicker/photoPicker.css" rel="stylesheet" />
+    <script src="/pages/photoPicker/photoPicker.js"></script>
+</head>
+
+<body>
+	<div class="options fragment">
+
+
+        <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'getPhotoButton',label:'Get Photos',icon:'find',
+                section:'global',tooltip:'Load a new set of pictures. This will clear any photos that have been loaded'}"></button>
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'addPhotoButton',label:'Add Photos',icon:'add',
+                section:'global',tooltip:'Add photos to the list'}"></button>
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'clearPhotoButton',label:'Clear Photos',icon:'clear',
+                section:'global',tooltip:'Erase all photos from the app'}"></button>
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'resetPhotoButton',label:'Reset Search',icon:'undo',
+                section:'global',tooltip:'Go back to your loaded photos'}"></button>
+
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'exportPhotoButton',label:'Export Photos',icon:'save',
+                section:'global',tooltip:'Export the search results'}"></button>
+        </div>
+        <!--
+        <button id="getPhotoButton" class="buttons" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'Load a new set of pictures. This will clear any photos that have been loaded'}">Get Photos</button>
+        <button id="addPhotoButton" class="buttons" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'Add photos to the list'}">Add Photos</button>
+        <button id="clearPhotoButton" class="buttons" data-win-control=" winjs.ui.tooltip" data-win-options="{innerHTML: 'Erase all photos from the app'}">Clear Photos</button>
+
+        <button id="resetPhotoButton" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'Go back to your loaded photos'}">Reset Search</button>
+        <button id="exportPhotoButton" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML: 'Export the search results'}">Export Photos</button>
+
+-->
+    <div id="NavBar" data-win-control="WinJS.UI.NavBar">
+        <div id="GlobalNav" data-win-control="WinJS.UI.NavBarContainer">
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Map',
+                        icon: WinJS.UI.AppBarIcon.home,
+                        location: '/pages/home/home.html',
+                        splitButton: false
+                        }">
+            </div>
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Options',
+                        icon: WinJS.UI.AppBarIcon.settings,
+                        location: '/pages/options/options.html',
+                        splitButton: false
+                        }">
+            </div>
+
+            <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{
+                        label: 'Information',
+                        icon: WinJS.UI.AppBarIcon.emoji2,
+                        location: '/pages/information/information.html',
+                        splitButton: false
+                        }">
+            </div>
+        </div>
+    </div>
+
+   <header aria-label="Header content" role="banner">
+            <button id="backButton" data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Photos</span>
+            </h1>
+
+			    <div id="myAd" style="position: absolute; top: 0px; width: 728px; height: 90px; z-index: 1; right: 0px;"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'c6db9f8e-aa57-4d4c-8ede-a78dad68b6b7', adUnitId: '182515'}">
+         </div>
+
+
+    </header>
+
+	<section aria-label="Main content" role="main">
+	<div data-win-control="WinJS.UI.ViewBox" style="left: 0px; top: 0px;">
+    <div id="content">
+        <div id="basicListView"
+             data-win-control="WinJS.UI.ListView"
+             data-win-options="{
+               itemTemplate:select('.itemtemplate')
+         }">
+        </div>
+
+        
+
+            <select id="distance">
+                <option value="5">5 km</option>
+                <option value="25">25 km</option>
+                <option value="50">50 km</option>
+                <option value="100">100 km</option>
+                <option value="200">200 km</option>
+                <option value="500">500 km</option>
+                <option value="1000">1000 km</option>
+            </select>
+            <div id="searchFields" class="searchBox"
+                 data-win-control="WinJS.UI.SearchBox"
+                 data-win-options="{placeholderText: 'Search Photos by Location',
+                                   onquerysubmitted: SearchUtils.querySubmittedHandler }" style="left: 750px; margin-top: 10px; top: -45px;">
+            </div>
+	
+        
+
+		</div>
+    </div>
+       <!-- Templates -->
+    <div id="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <div>
+            <div id="image">
+                <img id="displayImage" src="#" data-win-bind="src: src" />
+              <!--  <img id="displayMap" src="#" data-win-bind="src: image" /> -->
+            </div>
+            <p class="name" data-win-bind="innerText:name"></p>
+		</div>
+    </div>
+
+     <div id="itemtemplateDistance" data-win-control="WinJS.Binding.Template">
+            <div>
+                <div id="image">
+                    <img id="displayImage" src="#" data-win-bind="src: distance" />
+                    <!--  <img id="displayMap" src="#" data-win-bind="src: image" /> -->
+                </div>
+                <p class="name" data-win-bind="innerText:distance"></p>
+            </div>
+        </div>
+	</section>
+	</div>
+</body>
+
+
+</html>
